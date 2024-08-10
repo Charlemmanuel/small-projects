@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Commander";
+}
+
+@model CharlyStore.Models.AcheterProduit
+<style>
+    .form-cmd {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .border {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;        
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .text-danger {
+        color: red;
+        font-size: 12px;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+</style>
+
+<h1 class="form-cmd">Formulaire de Commande</h1>
+
+<form method="post">
+        <div class="border p-3 mt-4">
+            <div class="row pt-4">              
+            </div>
+
+            <label >Nom Complet : </label>
+            <input  type="text" class="form-control" asp-for="Name" placeholder="Nom complet" />
+             <span asp-validation-for="Name" class="text-danger"></span>
+
+            <label>Date de naissance :</label>
+            <input type="date" class="form-control" asp-for="Birthday" />
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+
+            <label>Téléphone :</label>
+            <input type="tel" class="form-control" asp-for="Phone" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+            <label>Produit :</label>
+            
+             <select class="form-control" asp-for="Produit" size=1>
+      <optgroup label="Smartphone">
+        <option>Iphone 15 pro max </option>
+         <option>Iphone 15 pro</option>
+         <option>Iphone 15 </option>
+          <option>Iphone 14 pro max </option>
+           <option>Iphone 14 pro </option>
+            <option>Iphone 14 </option>
+
+        <option>Google Pixel 8 pro</option>
+         <option>Google Pixel 8 </option>
+         <option>Google Pixel 7 pro</option>
+         <option>Google Pixel 7 </option>
+
+        <option>Samsung galaxy S23 ultra</option>
+         <option>Samsung galaxy S23+</option>
+          <option>Samsung galaxy S23</option>
+           <option>Samsung galaxy S22 ultra</option>
+            <option>Samsung galaxy S22+ </option>
+             <option>Samsung galaxy S22</option>
+    </optgroup>
+
+    <optgroup label="Laptop">
+        <option>ASUS TUF DASH F15</option>
+        <option>Asus Zenbook 13</option>
+        <option>Asus Zenbook 14</option>
+        <option>Asus Zenbook S</option>
+        <option>ROG Flow X16 Gaming</option>
+        <option>ROG Zephyrus G16</option>
+        <option>ROG Zephyrus G14</option>
+        <option>ROG Strix SCAR 17 X3D</option>
+        <option>ROG Strix G16</option>
+        <option>MacBook Pro M3</option>
+        <option>MacBook Pro M2</option>
+        <option>MacBook Pro M1</option>
+        <option>MacBook Air</option>
+        <option>HP Chromebook 15a-nb0000ca</option>
+         <option>HP spectre x360 13</option>
+         <option>HP spectre x360 14</option>           
+       
+    </optgroup>
+
+
+    <optgroup label="Accessoires">
+        <option>Apple Airpods pro</option>
+         <option>Apple Airpods Max</option>
+          <option>Apple Airpods gen 2</option>
+          <option>Apple Airpods 3</option>
+          <option>Apple magsafe</option>
+         <option>Galaxy buds 2</option>
+         <option>Galaxy buds 2 pro</option>
+         <option>Galaxy buds FE</option>
+         <option>Galaxy buds live</option>
+         <option>JBL Xtreme 2</option>
+          <option>JBL Boombox</option>
+           <option>JBL Boombox 2</option>
+            <option>JBL Flip 6</option>
+     </optgroup>
+</select>
+<span asp-validation-for="Produit" class="text-danger"></span>
+            <br /><br />     
+
+          <div class="button-container">
+    <button type="submit" class="btn btn-primary btn-sm">Commander</button>
+</div>
+
+
+        </div>
+        </form>
+ 

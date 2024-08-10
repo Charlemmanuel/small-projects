@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "confirmation";
+}
+@model CharlyStore.Models.Entities.Client
+<style>
+ .confirmation {
+         display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc; /* Bordure grise */
+    padding: 20px; /* Ajoute un espacement intérieur */
+    font-size: 20px;
+    border-radius: 10px;
+    }
+
+    .btn-primary {
+        margin-top: 20px; 
+        align-self: center;
+    }
+   
+</style>
+
+<div class="confirmation">
+    <h1>Confirmation de Commande</h1>
+    <p>Merci @Model.Name pour votre commande :</p><br />
+
+    <!-- Affiche le numéro de commande -->
+    <p>Numéro de commande : @Model.Id</p>
+
+    <!-- Affiche la date de naissance au format court -->
+    <p>Date de naissance : @Model.Birthday.ToShortDateString()</p>
+
+    <!-- Affiche le numéro de téléphone -->
+    <p>Téléphone : @Model.Phone</p>
+
+    <!-- Affiche le produit acheté -->
+    <p>Produit : @Model.Produit</p>
+
+    <!-- Affiche la date d'achat au format court et long -->
+    <p>Date d'achat : @Model.Date.ToShortDateString() , @Model.Date.ToLongTimeString()</p><br />
+
+    <p>Nous vous remercions de votre confiance!<br>N'hésitez pas à revenir acheter vos produits</p>
+
+    <!-- Bouton pour passer une autre commande -->
+    <a asp-action="Acheter" class="btn btn-primary">Passer une autre commande</a>
+</div>
